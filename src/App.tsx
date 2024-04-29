@@ -13,23 +13,18 @@ function App() {
         progressColor: 'rgb(100, 0, 100)'
       });
 
+      wavesurfer.current.load('/Song.mp3');
+
+      wavesurfer.current.on('ready', () => {
+        console.log("WaveSurfer is ready!");
+      });
+
       return () => wavesurfer.current?.destroy();
     }
   }, []);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files && event.target.files[0];
-    if (file && wavesurfer.current) {
-      const fileURL = URL.createObjectURL(file);
-      wavesurfer.current.load(fileURL);
-    }
-  };
-
   return (
     <div>
-      <div>
-        <input type="file" accept="audio/*" onChange={handleFileChange} />
-      </div>
       <div ref={waveformRef} style={{ width: '300%', border: '1px solid black' }}>
       </div>
       <button onClick={() => wavesurfer.current?.playPause()}>
