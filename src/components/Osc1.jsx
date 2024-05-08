@@ -1,34 +1,33 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const Osc1 = ({ change, settings, changeType }) => {
     let { type, frequency, detune } = settings
     return (
         <div className='control'>
-            <h2>Osc  1</h2>
-            <div className='param'>
-                <h3>Frequency</h3>
-                <input value={frequency}
+            <h2>Settings Oscilator</h2>
+            <Form.Group>
+            <Form.Label><h3>Frequency: {frequency} Hz</h3></Form.Label>
+                <Form.Control value={frequency}
                     onChange={change}
                     max='5000'
                     type='range' id='frequency' />
-            </div>
+            </Form.Group>
 
-            <div className='param'>
-                <h3>Detune</h3>
-                <input value={detune}
+            <Form.Group>
+            <Form.Label><h3>Detune: {detune} cents</h3></Form.Label>
+                <Form.Control value={detune}
                     onChange={change}
                     type='range'
                     id='detune' />
-            </div>
+            </Form.Group>
 
-            <div className='param'>
-                <h3>wave</h3>
-                <button id='sine' onClick={changeType} className={'${type==="sine" && "active"}'}>sine</button>
-                <button id='triangle' onClick={changeType} className={'${type==="triangle" && "active"}'}>triangle</button>
-                <button id='square' onClick={changeType} className={'${type==="square" && "active"}'}>square</button>
-                <button id='sawtooth' onClick={changeType} className={'${type==="sawtooth" && "active"}'}>sawtooth</button>
-
-            </div>
+                <h3>Wave</h3>
+                <Button id='sine' variant="dark" onClick={changeType} className={'${type==="sine" && "active"}'}>Sine</Button>
+                <Button id='triangle' variant="dark" onClick={changeType} className={'${type==="triangle" && "active"}'}>Triangle</Button>
+                <Button id='square' variant="dark" onClick={changeType} className={'${type==="square" && "active"}'}>Square</Button>
+                <Button id='sawtooth' variant="dark" onClick={changeType} className={'${type==="sawtooth" && "active"}'}>Sawtooth</Button>
 
         </div>
     );

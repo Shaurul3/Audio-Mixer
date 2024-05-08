@@ -2,45 +2,19 @@ body {
   background: lightblue;
   color: white;
   font-family: sans-serif;
-}
-
-.control
-{
-  background: lightcoral;
-  margin: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-  h3 {
-    width: 100%;
-    text-align: center;
-  }
-  input {
-    width: 25rem;
-  }
-  botton {
-    font-size: 1.4rem;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    transition:  all 0.3s ease;
-    background-color: white;
-    cursor: pointer;
-    width: 10rem;
-    border-radius: 3rem;
-  }
-  button:hover{
-    background: lightpink;
-  }
-  .active {
-    background: purple;
-    color: white;
-  }
+  background-image: url("Back5.jpg");
 }
 
 .center {
   transform: translateX(-50%);
   margin-left: 50%;
   text-align: center;
+}
+
+.text-center{
+  margin-top: 35px;
+  color:white;
+  background-color: rgba(6, 83, 172);
+  border-radius: 1rem;
+  padding: 10px;
 }

@@ -12,8 +12,12 @@
   "dependencies": {
     "@wavesurfer/react": "^1.0.5",
     "audio-mixer.js": "^1.0.7",
+    "bootstrap": "^5.3.3",
+    "lamejs": "^1.2.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0",
     "recorder-js": "^1.0.7",
     "tone": "^14.9.17",
     "wavesurfer.js": "^7.7.13"

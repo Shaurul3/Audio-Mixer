@@ -1,61 +1,66 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const Filter = ({ change, settings, changeType }) => {
-    let {frequency, detune, Q, gain, type } = settings
+    let { frequency, detune, Q, gain, type } = settings
     return (
         <div className='control'>
             <h2>Filter</h2>
-            <div className='param'>
-                <h3>Frequency</h3>
-                <input
-                value = {frequency}
+            <Form.Group>
+                <Form.Label><h3>Frequency: {frequency} Hz</h3></Form.Label>
+                <Form.Control
+                    value={frequency}
                     onChange={change}
                     max='10000'
-                    type='range' 
-                    id='frequency' />
-            </div>
+                    type='range'
+                    id='frequency'
+                />
+            </Form.Group>
 
-            <div className='param'>
-                <h3>Detune</h3>
-                <input
-                value = {detune}
+            <Form.Group>
+            <Form.Label><h3>Detune: {detune} cents</h3></Form.Label>
+                <Form.Control
+                    value={detune}
                     onChange={change}
-                    type='range' 
-                    id='detune' />
-            </div>
+                    type='range'
+                    id='detune'
+                />
+            </Form.Group>
 
-            <div className='param'>
-                <h3>Q</h3>
-                <input
-                value = {Q}
-                    onChange={change}
-                    max='10'
-                    type='range' 
-                    id='Q' />
-            </div>
-
-            <div className='param'>
-                <h3>gain</h3>
-                <input
-                value = {gain}
+            <Form.Group>
+            <Form.Label><h3>Q: {Q}</h3></Form.Label>
+                <Form.Control
+                    value={Q}
                     onChange={change}
                     max='10'
-                    type='range' 
-                    id='gain' />
-            </div>
+                    type='range'
+                    id='Q'
+                />
+            </Form.Group>
 
-            <div className='param'>
-                <h3>type</h3>
-                <button id='lowpass' onClick={changeType} className={'${type==="lowpass" && "active"}'}>lowpass</button>
-                <button id='highpass' onClick={changeType} className={'${type==="highpass" && "active"}'}>highpass</button>
-                <button id='bandpass' onClick={changeType} className={'${type==="bandpass" && "active"}'}>bandpass</button>
-                <button id='allpass' onClick={changeType} className={'${type==="allpass" && "active"}'}>allpass</button>
+
+            <Form.Group>
+            <Form.Label><h3>Gain: {gain} dB</h3></Form.Label>
+                <Form.Control
+                    value={gain}
+                    onChange={change}
+                    max='10'
+                    type='range'
+                    id='gain'
+                />
+            </Form.Group>
+
+                <h3>Type</h3>
+                <Button id='lowpass' variant="dark" onClick={changeType} className={'${type==="lowpass" && "active"}'}>Lowpass</Button>
+                <Button id='highpass' variant="dark" onClick={changeType} className={'${type==="highpass" && "active"}'}>Highpass</Button>
+                <Button id='bandpass' variant="dark" onClick={changeType} className={'${type==="bandpass" && "active"}'}>Bandpass</Button>
+                <Button id='allpass' variant="dark" onClick={changeType} className={'${type==="allpass" && "active"}'}>Allpass</Button>
                 <br></br>
-                <button id='notch' onClick={changeType} className={'${type==="notch" && "active"}'}>notch</button>
-                <button id='peaking' onClick={changeType} className={'${type==="peaking" && "active"}'}>peaking</button>
-                <button id='lowshelf' onClick={changeType} className={'${type==="lowshelf" && "active"}'}>lowshelf</button>
-                <button id='highshelf' onClick={changeType} className={'${type==="highshelf" && "active"}'}>highshelf</button>
-            </div>
+                <Button id='notch' variant="dark" onClick={changeType} className={'${type==="notch" && "active"}'}>Notch</Button>
+                <Button id='peaking' variant="dark" onClick={changeType} className={'${type==="peaking" && "active"}'}>Peaking</Button>
+                <Button id='lowshelf' variant="dark" onClick={changeType} className={'${type==="lowshelf" && "active"}'}>Lowshelf</Button>
+                <Button id='highshelf' variant="dark" onClick={changeType} className={'${type==="highshelf" && "active"}'}>Highshelf</Button>
 
         </div>
     );
